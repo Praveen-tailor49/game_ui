@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiRupee, BiRefresh } from 'react-icons/bi';
 import { AiFillTrophy } from 'react-icons/ai';
 import { Button } from 'react-bootstrap';
@@ -7,8 +7,33 @@ import ModalReadRule from './ModalReadRule';
 import { Link } from 'react-router-dom'
 
 const WinHeader = () => {
-    const [modalShow, setModalShow] = React.useState(false);
-    const [modalShow1, setModalShow1] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [modalShow1, setModalShow1] = useState(false);
+    const [deadline, setDeadline] = useState(0)
+    const [timeRemaining, setTimeRemaining] = useState(0)
+
+    const initialDeadline = () => {
+        let now = new Date()
+        let deadline = new Date(now.getTime() + 60000)
+        setDeadline(deadline)
+    }
+
+    const updateTimer = () => {
+        let now = new Date()
+        let remaining = now.getTime() - deadline.getTime()
+
+        setTimeRemaining(remaining)        
+    }
+
+    useEffect(() => {
+        initialDeadline()
+    }, [])
+    
+
+    useEffect(() => {
+        updateTimer()
+    })
+    
     return (
         <>
             <div style={{ backgroundColor: '#1E90FF', color: 'white' }}>
@@ -46,7 +71,7 @@ const WinHeader = () => {
 
                     <div style={{ marginLeft: '55px' }}>
                         <h6>Count Down</h6>
-                        <h4>02:49</h4>
+                        <h4>{timeRemaining}</h4>
                     </div>
                 </div>
 
