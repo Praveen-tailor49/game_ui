@@ -95,7 +95,7 @@ const WinHeader = () => {
             </div>
 
             <div style={{display:'none'}} id='showCoin'>
-                <div style={{ display: 'grid', gridTemplateColumns: ' repeat(auto-fill, 90px)', justifyItems: 'center', gridGap: '20px', padding: '1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: ' repeat(auto-fill, 90px)', justifyItems: 'center', gridGap: '35px', padding: '1rem' }}>
 
                     <div >
                         <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1'  onClick={() => showModal2('100')} />
