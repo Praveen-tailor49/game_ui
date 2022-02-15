@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { BiRupee, BiRefresh } from 'react-icons/bi';
 import { AiFillTrophy } from 'react-icons/ai';
 import { Button } from 'react-bootstrap';
@@ -13,6 +13,7 @@ import coin5 from '../image/coins-img/coin-5.png'
 import coin6 from '../image/coins-img/coin-6.png'
 import coin7 from '../image/coins-img/coin-7.png'
 import coin8 from '../image/coins-img/coin-8.png'
+import custom from '../image/coins-img/coin-custom.png'
 import card1 from '../image/cards/card-1.png'
 import card2 from '../image/cards/card-2.png'
 import card3 from '../image/cards/card-3.png'
@@ -25,16 +26,16 @@ const WinHeader = () => {
     const [valueRupess, setValueRupess] = useState('');
     const [cardValue, setCardValue] = useState('');
 
-    const showDiv = (val) =>{
+    const showDiv = (val) => {
         setCardValue(val)
-         document.getElementById('showCoin').style.display='block'
+        document.getElementById('showCoin').style.display = 'block'
     }
 
     const showModal2 = (val) => {
         setModalShow2(true)
         console.log(val);
         setValueRupess(val)
-        document.getElementById('showCoin').style.display='none'
+        document.getElementById('showCoin').style.display = 'none'
     }
 
     return (
@@ -80,40 +81,40 @@ const WinHeader = () => {
 
                 <div style={{ display: 'flex', padding: '6px', justifyContent: 'center' }}>
 
-                    <div style={{ margin: '1rem' }} onClick={()=>showDiv('A')}>
+                    <div style={{ margin: '1rem' }} onClick={() => showDiv('A')}>
                         <img src={card2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card1' />
                     </div>
 
-                    <div style={{ margin: '1rem' }} onClick={()=>showDiv('B')}>
+                    <div style={{ margin: '1rem' }} onClick={() => showDiv('B')}>
                         <img src={card1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card2' />
                     </div>
 
-                    <div style={{ margin: '1rem' }} onClick={()=>showDiv('T')}>
+                    <div style={{ margin: '1rem' }} onClick={() => showDiv('T')}>
                         <img src={card3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card3' />
                     </div>
                 </div>
             </div>
 
-            <div style={{display:'none'}} id='showCoin'>
+            <div style={{ display: 'none' }} id='showCoin'>
                 <div style={{ display: 'grid', gridTemplateColumns: ' repeat(auto-fill, 90px)', justifyItems: 'center', gridGap: '35px', padding: '1rem' }}>
 
                     <div >
-                        <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1'  onClick={() => showModal2('100')} />
+                        <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1' onClick={() => showModal2('100')} />
                     </div>
                     <div >
-                        <img src={coin2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#ED1F57' }} alt='coin2'  onClick={() => showModal2('500')} />
+                        <img src={coin2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#ED1F57' }} alt='coin2' onClick={() => showModal2('500')} />
                     </div>
                     <div >
-                        <img src={coin3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#BB4D9D' }} alt='coin3'  onClick={() => showModal2('1000')} />
+                        <img src={coin3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#BB4D9D' }} alt='coin3' onClick={() => showModal2('1000')} />
                     </div>
                     <div >
-                        <img src={coin4} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#7153A3' }} alt='coin4'  onClick={() => showModal2('3000')} />
+                        <img src={coin4} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#7153A3' }} alt='coin4' onClick={() => showModal2('3000')} />
                     </div>
                     <div >
-                        <img src={coin5} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#443292' }} alt='coin5'  onClick={() => showModal2('5000')} />
+                        <img src={coin5} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#443292' }} alt='coin5' onClick={() => showModal2('5000')} />
                     </div>
                     <div >
-                        <img src={coin6} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#10B99D' }} alt='coin6'  onClick={() => showModal2('10000')} />
+                        <img src={coin6} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#10B99D' }} alt='coin6' onClick={() => showModal2('10000')} />
                     </div>
                     <div >
                         <img src={coin7} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#6CBD45' }} alt='coin7' onClick={() => showModal2('20000')} />
@@ -121,9 +122,13 @@ const WinHeader = () => {
                     <div >
                         <img src={coin8} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#E16926' }} alt='coin8' onClick={() => showModal2('30000')} />
                     </div>
-                    <div>
-                    <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
-                </div>
+
+                    <div >
+                        <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8' onClick={() => showModal2('30000')} />
+                    </div>
+                    {/* <div>
+                        <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
+                    </div> */}
                 </div>
             </div>
             {/* <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
@@ -142,10 +147,10 @@ const WinHeader = () => {
             />
 
             <ModalRupesSelect
-               show={modalShow2}
-               onHide={() => setModalShow2(false)}
-               value= {valueRupess}
-               cardValue={cardValue}
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+                value={valueRupess}
+                cardValue={cardValue}
             />
         </>
     )
