@@ -124,7 +124,7 @@ const WinHeader = () => {
                     </div>
 
                     <div >
-                        <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8' onClick={() => showModal2('30000')} />
+                        <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8'  onClick={() => setModalShow(true)} />
                     </div>
                     {/* <div>
                         <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
