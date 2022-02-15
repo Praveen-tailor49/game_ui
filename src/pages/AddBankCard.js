@@ -45,6 +45,7 @@ const AddBankCard = () => {
             .then(result => {
                 if (result.mess === 'Successfully') {
                     alert('Add Successfully')
+                    document.getElementById('showDiv').style.display = 'none'
                 } else {
                     alert('Not Add')
                 }

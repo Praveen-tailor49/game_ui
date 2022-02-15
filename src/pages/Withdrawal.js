@@ -84,9 +84,9 @@ const Withdrawal = () => {
 
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                    <div>
-                        <Button style={{ width: '10rem', margin: '6px' }} variant="primary" type="submit">
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={{margin:'4rem'}}>
+                        <Button style={{ width: '10rem', marginBottom: '26px' }} variant="primary" type="submit">
                             Withdrawal
                         </Button>
                     </div>

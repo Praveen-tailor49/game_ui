@@ -79,7 +79,7 @@ export const Login = () => {
                             </Button>
                         </div>
 
-                        <div>
+                        <div style={{marginBottom:'6rem'}}>
                             <Link to='/register' onClick={() => setPage(false)}><Button style={{ width: '5rem', margin: '2px' }} variant="secondary" type="submit">
                                 Register
                             </Button></Link>

@@ -41,7 +41,7 @@ import Footer from '../components/Footer';
                     </Form.Group>
 
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <div>
+                        <div style={{marginBottom:'6rem'}}>
                             <Button style={{ width: '16rem' }} variant="primary" type="submit">
                                Continue
                             </Button>

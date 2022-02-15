@@ -16,16 +16,7 @@ function Recharge() {
         </Navbar>
       </div>
       <div style={{ boxShadow: "1px 1px 5px 1px #888888", paddingBottom: "5rem", width: "100%" }}>
-        {/* <Navbar style={{ backgroundColor: "#0288d1", height: "3.8rem" }} variant="dark">
-          <Container>
-            <Nav className="me-auto" style={{ display: "flex" }}>
-              < MdOutlineArrowBack style={{ color: "white", width: "2rem", height: "2rem", margin: "0.5rem" }} />
-              <Nav.Link href="#home" style={{ color: "white", fontSize: "1.5rem", margin: "0.2rem", textDecoration: "none" }}>Recharge
-              </Nav.Link>
 
-            </Nav>
-          </Container>
-        </Navbar> */}
         <Navbar style={{ backgroundColor: "#fc8d38", height: "5%", marginTop: "0px" }}>
           <p style={{ color: "white", fontSize: "1rem", padding: "0.4rem" }}>!  Note: If the recharge amount is deducted but amountis not added to the account, please send a detailed screenshot of payment and game ID to the mailbox for processing </p>
         </Navbar>

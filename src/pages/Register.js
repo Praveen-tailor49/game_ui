@@ -101,7 +101,7 @@ export const Register = () => {
                         <Form.Check type="checkbox" label="I agree PRIVACY POLICY" required/>
                     </Form.Group>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <div>
+                        <div style={{marginBottom:'6rem'}}>
                             <Button style={{ width: '16rem' }} variant="primary" type="submit" onClick={(e)=>singIn(e)}>
                                 Register
                             </Button>
