@@ -23,8 +23,10 @@ const WinHeader = () => {
     const [modalShow1, setModalShow1] = useState(false);
     const [modalShow2, setModalShow2] = useState(false);
     const [valueRupess, setValueRupess] = useState('');
+    const [cardValue, setCardValue] = useState('');
 
-    const showDiv = () =>{
+    const showDiv = (val) =>{
+        setCardValue(val)
          document.getElementById('showCoin').style.display='block'
     }
 
@@ -32,6 +34,7 @@ const WinHeader = () => {
         setModalShow2(true)
         console.log(val);
         setValueRupess(val)
+        document.getElementById('showCoin').style.display='none'
     }
 
     return (
@@ -77,22 +80,22 @@ const WinHeader = () => {
 
                 <div style={{ display: 'flex', padding: '6px', justifyContent: 'center' }}>
 
-                    <div style={{ margin: '1rem' }} onClick={()=>showDiv()}>
+                    <div style={{ margin: '1rem' }} onClick={()=>showDiv('A')}>
                         <img src={card2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card1' />
                     </div>
 
-                    <div style={{ margin: '1rem' }} onClick={()=>showDiv()}>
+                    <div style={{ margin: '1rem' }} onClick={()=>showDiv('B')}>
                         <img src={card1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card2' />
                     </div>
 
-                    <div style={{ margin: '1rem' }} onClick={()=>showDiv()}>
+                    <div style={{ margin: '1rem' }} onClick={()=>showDiv('T')}>
                         <img src={card3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card3' />
                     </div>
                 </div>
             </div>
 
             <div style={{display:'none'}} id='showCoin'>
-                <div style={{ display: 'grid', gridTemplateColumns: ' repeat(auto-fill, 125px)', justifyItems: 'center', gridGap: '10px', padding: '1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: ' repeat(auto-fill, 80px)', justifyItems: 'center', gridGap: '10px', padding: '1rem' }}>
 
                     <div >
                         <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1'  onClick={() => showModal2('100')} />
@@ -118,18 +121,16 @@ const WinHeader = () => {
                     <div >
                         <img src={coin8} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#E16926' }} alt='coin8' onClick={() => showModal2('30000')} />
                     </div>
-                    {/* <div>
-                    <Button variant="light" style={{ boxShadow: '1px 1px gray', width: '100px' }}><BiRupee /> 500</Button>
-                </div> */}
-
-
+                    <div>
+                    <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
+                </div>
                 </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
+            {/* <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
                 <div>
                     <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
                 </div>
-            </div>
+            </div> */}
             <ModalWin
                 show={modalShow}
                 onHide={() => setModalShow(false)}
@@ -144,6 +145,7 @@ const WinHeader = () => {
                show={modalShow2}
                onHide={() => setModalShow2(false)}
                value= {valueRupess}
+               cardValue={cardValue}
             />
         </>
     )

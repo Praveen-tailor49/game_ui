@@ -21,7 +21,7 @@ const ModalRupesSelect = (props) => {
                             </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <p> Successfully Add :{props.value}</p>
+                            <p> Rupees {props.value}, Bid Added Successfully on {props.cardValue}</p>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={props.onHide}>Close</Button>
