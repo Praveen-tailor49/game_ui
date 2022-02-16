@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BiRupee, BiRefresh } from 'react-icons/bi';
 import { AiFillTrophy } from 'react-icons/ai';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import ModalWin from './ModalWin';
 import ModalReadRule from './ModalReadRule';
 import { Link } from 'react-router-dom'
@@ -116,6 +116,8 @@ const WinHeader = () => {
             </div>
 
             <CoinDiv  id='showCoin'>
+                <Container>
+
                 <CoinCnterDiv>
 
                     <div >
@@ -148,6 +150,7 @@ const WinHeader = () => {
                     </div>
 
                 </CoinCnterDiv>
+                </Container>
             </CoinDiv>
 
             <ModalWin
@@ -207,15 +210,10 @@ padding: 1rem;
     justify-content: center;
   }
 
-  @media screen and (max-width: 415px) {
-    grid-column-gap: 64px;
+ 
+
+  @media screen and (max-width: 335px) {
+    grid-gap: 26px;
   }
 
-  @media screen and (max-width: 370px) {
-    grid-gap: 35px;
-  }
-
-  @media screen and (max-width: 312px) {
-    grid-gap: 25px;
-  }
 `
