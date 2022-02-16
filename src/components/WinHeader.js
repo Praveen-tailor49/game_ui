@@ -18,6 +18,7 @@ import card1 from '../image/cards/card-1.png'
 import card2 from '../image/cards/card-2.png'
 import card3 from '../image/cards/card-3.png'
 import ModalRupesSelect from './ModalRupesSelect';
+import styled from 'styled-components'
 
 const WinHeader = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -27,6 +28,25 @@ const WinHeader = () => {
     const [cardValue, setCardValue] = useState('');
 
     const showDiv = (val) => {
+
+        if(val === 'A') {
+            document.getElementById('A').style.boxShadow = '0px 0px 30px 2px  #2861C6';
+        } else{
+            document.getElementById('A').style.boxShadow = '1px 1px gray';
+        }
+        
+        if(val === 'B'){
+            document.getElementById('B').style.boxShadow = '0px 0px 30px 2px  #E0422D';
+        }else{
+            document.getElementById('B').style.boxShadow = '1px 1px gray';
+        }
+        
+        if(val === 'T'){
+            document.getElementById('T').style.boxShadow = '0px 0px 30px 2px  #1A7F14';
+        }else{
+            document.getElementById('T').style.boxShadow = '1px 1px gray';
+        }
+
         setCardValue(val)
         document.getElementById('showCoin').style.display = 'block'
     }
@@ -81,22 +101,22 @@ const WinHeader = () => {
 
                 <div style={{ display: 'flex', padding: '6px', justifyContent: 'center' }}>
 
-                    <div style={{ margin: '1rem' }} onClick={() => showDiv('A')}>
-                        <img src={card2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card1' />
-                    </div>
+                    <CardDiv  onClick={() => showDiv('A')}>
+                        <CardImg src={card2} alt='card1' id="A" />
+                    </CardDiv>
 
-                    <div style={{ margin: '1rem' }} onClick={() => showDiv('B')}>
-                        <img src={card1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card2' />
-                    </div>
+                    <CardDiv  onClick={() => showDiv('B')}>
+                        <CardImg src={card1} alt='card2' id="B" />
+                    </CardDiv>
 
-                    <div style={{ margin: '1rem' }} onClick={() => showDiv('T')}>
-                        <img src={card3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '0.5rem' }} alt='card3' />
-                    </div>
+                    <CardDiv  onClick={() => showDiv('T')}>
+                        <CardImg src={card3} alt='card3' id="T" />
+                    </CardDiv>
                 </div>
             </div>
 
-            <div style={{ display: 'none' }} id='showCoin'>
-                <div style={{ display: 'grid', gridTemplateColumns: ' repeat(auto-fill, 90px)', justifyItems: 'center', gridGap: '35px', padding: '1rem' }}>
+            <CoinDiv  id='showCoin'>
+                <CoinCnterDiv>
 
                     <div >
                         <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1' onClick={() => showModal2('100')} />
@@ -124,18 +144,12 @@ const WinHeader = () => {
                     </div>
 
                     <div >
-                        <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8'  onClick={() => setModalShow(true)} />
+                        <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8' onClick={() => setModalShow(true)} />
                     </div>
-                    {/* <div>
-                        <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
-                    </div> */}
-                </div>
-            </div>
-            {/* <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                <div>
-                    <Button variant="light" onClick={() => setModalShow(true)} style={{ boxShadow: '1px 1px gray', width: '100px' }}>Coustom</Button>
-                </div>
-            </div> */}
+
+                </CoinCnterDiv>
+            </CoinDiv>
+
             <ModalWin
                 show={modalShow}
                 onHide={() => setModalShow(false)}
@@ -157,3 +171,47 @@ const WinHeader = () => {
 }
 
 export default WinHeader
+
+
+const CardDiv = styled.div`
+margin: 1rem;
+cursor:pointer;
+
+`;
+
+const CardImg = styled.img`
+box-shadow: 1px 1px gray;
+width: 5rem; 
+border-radius: 0.5rem;
+
+@media screen and (min-width: 768px) {
+    width: 12rem; 
+  }
+
+`;
+ 
+const CoinDiv = styled.div`
+display: none;
+
+`;
+
+const CoinCnterDiv = styled.div`
+
+display: grid; 
+grid-template-columns: repeat(auto-fill, 70px); 
+justify-items: center; 
+grid-gap: 35px; 
+padding: 1rem;
+@media screen and (min-width: 968px) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 415px) {
+    grid-column-gap: 64px;
+  }
+
+  @media screen and (max-width: 320px) {
+    grid-gap: 35px;
+  }
+`
