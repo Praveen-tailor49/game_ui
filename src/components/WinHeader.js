@@ -210,7 +210,10 @@ padding: 1rem;
     justify-content: center;
   }
 
- 
+  @media screen and (max-width: 440px) {
+    grid-gap: 26px;
+    margin-left:30px
+  }
 
   @media screen and (max-width: 335px) {
     grid-gap: 26px;
