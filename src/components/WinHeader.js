@@ -214,4 +214,8 @@ padding: 1rem;
   @media screen and (max-width: 320px) {
     grid-gap: 35px;
   }
+
+  @media screen and (max-width: 312px) {
+    grid-gap: 25px;
+  }
 `
