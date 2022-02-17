@@ -15,8 +15,9 @@ export const Register = () => {
         userNickName:'',
         userPassword: '',
         userReCode:'',
-        userBalance:'',
-        userStatus:''
+        userBalance:'0',
+        userStatus:'0',
+        userDelete:'1'
     })
 
 
@@ -32,12 +33,12 @@ export const Register = () => {
     const singIn = (e) => {
         e.preventDefault()
 
-        const {userName, userBalance, userMobile, userNickName, userPassword, userReCode,userStatus} = userData
+        const {userName, userBalance, userMobile, userNickName, userPassword, userReCode,userStatus,userDelete} = userData
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-            userName, userMobile, userNickName, userPassword, userReCode, userBalance, userStatus
+            userName, userMobile, userNickName, userPassword, userReCode, userBalance, userStatus, userDelete
         });
 
         var requestOptions = {
@@ -82,7 +83,7 @@ export const Register = () => {
                         </div>
 
                         <div style={{ width: '10rem', marginLeft: '10px' }}>
-                            <Button variant="secondary" type="submit">
+                            <Button variant="secondary">
                                 OTP
                             </Button>
                         </div>

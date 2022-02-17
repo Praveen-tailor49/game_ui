@@ -13,6 +13,7 @@ import coin5 from '../image/coins-img/coin-5.png'
 import coin6 from '../image/coins-img/coin-6.png'
 import coin7 from '../image/coins-img/coin-7.png'
 import coin8 from '../image/coins-img/coin-8.png'
+import coin10 from '../image/coins-img/coin-10.png'
 import custom from '../image/coins-img/coin-custom.png'
 import card1 from '../image/cards/card-1.png'
 import card2 from '../image/cards/card-2.png'
@@ -26,6 +27,7 @@ const WinHeader = () => {
     const [modalShow2, setModalShow2] = useState(false);
     const [valueRupess, setValueRupess] = useState('');
     const [cardValue, setCardValue] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const showDiv = (val) => {
 
@@ -51,10 +53,15 @@ const WinHeader = () => {
     }
 
     const showModal2 = (val) => {
-        setModalShow2(true)
-        console.log(val);
-        setValueRupess(val)
-        document.getElementById('showCoin').style.display = 'none'
+        if (cardValue) {
+            setModalShow2(true)
+            setValueRupess(val)
+            setShowModal(false)
+        } else {
+            setModalShow2(true)
+            setValueRupess(val)
+            setShowModal(true)
+        }
     }
 
     return (
@@ -117,7 +124,9 @@ const WinHeader = () => {
             <CoinDiv>
                 <Container>
                     <CoinCnterDiv>
-
+                        <div >
+                            <img src={coin10} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin10'  onClick={() => showModal2('10')} />
+                        </div>
                         <div >
                             <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1' onClick={() => showModal2('100')} />
                         </div>
@@ -143,9 +152,9 @@ const WinHeader = () => {
                             <img src={coin8} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#E16926' }} alt='coin8' onClick={() => showModal2('30000')} />
                         </div>
 
-                        <div >
+                        {/* <div >
                             <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8' onClick={() => setModalShow(true)} />
-                        </div>
+                        </div> */}
 
                     </CoinCnterDiv>
                 </Container>
@@ -166,6 +175,7 @@ const WinHeader = () => {
                 onHide={() => setModalShow2(false)}
                 value={valueRupess}
                 cardValue={cardValue}
+                showModal={showModal}
             />
         </>
     )
