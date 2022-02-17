@@ -29,26 +29,25 @@ const WinHeader = () => {
 
     const showDiv = (val) => {
 
-        if(val === 'A') {
+        if (val === 'A') {
             document.getElementById('A').style.boxShadow = '0px 0px 30px 2px  #2861C6';
-        } else{
+        } else {
             document.getElementById('A').style.boxShadow = '1px 1px gray';
         }
-        
-        if(val === 'B'){
+
+        if (val === 'B') {
             document.getElementById('B').style.boxShadow = '0px 0px 30px 2px  #E0422D';
-        }else{
+        } else {
             document.getElementById('B').style.boxShadow = '1px 1px gray';
         }
-        
-        if(val === 'T'){
+
+        if (val === 'T') {
             document.getElementById('T').style.boxShadow = '0px 0px 30px 2px  #1A7F14';
-        }else{
+        } else {
             document.getElementById('T').style.boxShadow = '1px 1px gray';
         }
 
         setCardValue(val)
-        document.getElementById('showCoin').style.display = 'block'
     }
 
     const showModal2 = (val) => {
@@ -101,55 +100,54 @@ const WinHeader = () => {
 
                 <div style={{ display: 'flex', padding: '6px', justifyContent: 'center' }}>
 
-                    <CardDiv  onClick={() => showDiv('A')}>
+                    <CardDiv onClick={() => showDiv('A')}>
                         <CardImg src={card2} alt='card1' id="A" />
                     </CardDiv>
 
-                    <CardDiv  onClick={() => showDiv('B')}>
+                    <CardDiv onClick={() => showDiv('B')}>
                         <CardImg src={card1} alt='card2' id="B" />
                     </CardDiv>
 
-                    <CardDiv  onClick={() => showDiv('T')}>
+                    <CardDiv onClick={() => showDiv('T')}>
                         <CardImg src={card3} alt='card3' id="T" />
                     </CardDiv>
                 </div>
             </div>
 
-            <CoinDiv  id='showCoin'>
+            <CoinDiv>
                 <Container>
+                    <CoinCnterDiv>
 
-                <CoinCnterDiv>
+                        <div >
+                            <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1' onClick={() => showModal2('100')} />
+                        </div>
+                        <div >
+                            <img src={coin2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#ED1F57' }} alt='coin2' onClick={() => showModal2('500')} />
+                        </div>
+                        <div >
+                            <img src={coin3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#BB4D9D' }} alt='coin3' onClick={() => showModal2('1000')} />
+                        </div>
+                        <div >
+                            <img src={coin4} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#7153A3' }} alt='coin4' onClick={() => showModal2('3000')} />
+                        </div>
+                        <div >
+                            <img src={coin5} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#443292' }} alt='coin5' onClick={() => showModal2('5000')} />
+                        </div>
+                        <div >
+                            <img src={coin6} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#10B99D' }} alt='coin6' onClick={() => showModal2('10000')} />
+                        </div>
+                        <div >
+                            <img src={coin7} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#6CBD45' }} alt='coin7' onClick={() => showModal2('20000')} />
+                        </div>
+                        <div >
+                            <img src={coin8} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#E16926' }} alt='coin8' onClick={() => showModal2('30000')} />
+                        </div>
 
-                    <div >
-                        <img src={coin1} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#F6B527' }} alt='coin1' onClick={() => showModal2('100')} />
-                    </div>
-                    <div >
-                        <img src={coin2} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#ED1F57' }} alt='coin2' onClick={() => showModal2('500')} />
-                    </div>
-                    <div >
-                        <img src={coin3} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#BB4D9D' }} alt='coin3' onClick={() => showModal2('1000')} />
-                    </div>
-                    <div >
-                        <img src={coin4} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#7153A3' }} alt='coin4' onClick={() => showModal2('3000')} />
-                    </div>
-                    <div >
-                        <img src={coin5} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#443292' }} alt='coin5' onClick={() => showModal2('5000')} />
-                    </div>
-                    <div >
-                        <img src={coin6} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#10B99D' }} alt='coin6' onClick={() => showModal2('10000')} />
-                    </div>
-                    <div >
-                        <img src={coin7} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#6CBD45' }} alt='coin7' onClick={() => showModal2('20000')} />
-                    </div>
-                    <div >
-                        <img src={coin8} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#E16926' }} alt='coin8' onClick={() => showModal2('30000')} />
-                    </div>
+                        <div >
+                            <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8' onClick={() => setModalShow(true)} />
+                        </div>
 
-                    <div >
-                        <img src={custom} style={{ boxShadow: '1px 1px gray', width: '5rem', borderRadius: '50rem', background: '#AAA64D' }} alt='coin8' onClick={() => setModalShow(true)} />
-                    </div>
-
-                </CoinCnterDiv>
+                    </CoinCnterDiv>
                 </Container>
             </CoinDiv>
 
@@ -192,10 +190,9 @@ border-radius: 0.5rem;
   }
 
 `;
- 
-const CoinDiv = styled.div`
-display: none;
 
+const CoinDiv = styled.div`
+display: block;
 `;
 
 const CoinCnterDiv = styled.div`
@@ -216,7 +213,7 @@ padding: 1rem;
   }
 
   @media screen and (max-width: 335px) {
-    grid-gap: 26px;
+    grid-gap: 20px;
   }
 
 `
