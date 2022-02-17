@@ -20,6 +20,8 @@ import card2 from '../image/cards/card-2.png'
 import card3 from '../image/cards/card-3.png'
 import ModalRupesSelect from './ModalRupesSelect';
 import styled from 'styled-components'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const WinHeader = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -28,6 +30,8 @@ const WinHeader = () => {
     const [valueRupess, setValueRupess] = useState('');
     const [cardValue, setCardValue] = useState('');
     const [showModal, setShowModal] = useState(false);
+
+   
 
     const showDiv = (val) => {
 
@@ -58,9 +62,15 @@ const WinHeader = () => {
             setValueRupess(val)
             setShowModal(false)
         } else {
-            setModalShow2(true)
-            setValueRupess(val)
-            setShowModal(true)
+            toast.error('Please Select a Card First. From A/B/T', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
         }
     }
 
@@ -177,6 +187,8 @@ const WinHeader = () => {
                 cardValue={cardValue}
                 showModal={showModal}
             />
+
+            <ToastContainer />
         </>
     )
 }
