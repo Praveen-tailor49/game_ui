@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BiRupee, BiRefresh } from 'react-icons/bi';
 import { AiFillTrophy } from 'react-icons/ai';
 import { Button, Container } from 'react-bootstrap';
-import ModalWin from './ModalWin';
+// import ModalWin from './ModalWin';
 import ModalReadRule from './ModalReadRule';
 import { Link } from 'react-router-dom'
 import coin1 from '../image/coins-img/coin-1.png'
@@ -24,12 +24,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const WinHeader = () => {
-    const [modalShow, setModalShow] = useState(false);
+    // const [modalShow, setModalShow] = useState(false);
     const [modalShow1, setModalShow1] = useState(false);
     const [modalShow2, setModalShow2] = useState(false);
     const [valueRupess, setValueRupess] = useState('');
     const [cardValue, setCardValue] = useState('');
-    const [showModal, setShowModal] = useState(false);
 
    
 
@@ -60,7 +59,6 @@ const WinHeader = () => {
         if (cardValue) {
             setModalShow2(true)
             setValueRupess(val)
-            setShowModal(false)
         } else {
             toast.error('Please Select a Card First. From A/B/T', {
                 position: "top-right",
@@ -170,10 +168,10 @@ const WinHeader = () => {
                 </Container>
             </CoinDiv>
 
-            <ModalWin
+            {/* <ModalWin
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-            />
+            /> */}
 
             <ModalReadRule
                 show={modalShow1}
@@ -185,7 +183,6 @@ const WinHeader = () => {
                 onHide={() => setModalShow2(false)}
                 value={valueRupess}
                 cardValue={cardValue}
-                showModal={showModal}
             />
 
             <ToastContainer />
