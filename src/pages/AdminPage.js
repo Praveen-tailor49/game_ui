@@ -73,7 +73,7 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/user/management"
+                                to="/user/pages"
                             >
                                 <RiPagesLine />
                                 <Text clicked={click}>Pages</Text>
@@ -81,7 +81,7 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/user/pages"
                             >
                                 <BsStar />
                                 <Text clicked={click}>Promotions</Text>

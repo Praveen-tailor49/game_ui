@@ -21,6 +21,7 @@ import Recharge from './pages/Recharge';
 import Home from './pages/Home';
 import AdminPage from './pages/AdminPage';
 import UserManagement from './adminPages/UserManagement';
+import Pages from './adminPages/Pages';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
 
           <Route path='/admin' element={<AdminPage/>}/>
           <Route path='/user/management' element={<UserManagement/>}/>
+          <Route path='/user/pages' element={<Pages/>}/>
 
 
 
