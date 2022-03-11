@@ -1,19 +1,18 @@
 import React from 'react'
 import Footer from '../components/Footer';
 import TableWin from '../components/TableWin';
-import WinHeader from '../components/WinHeader2';
+import WinHeader2 from '../components/WinHeader2';
 
 
-const Win = ({userBalance, baseUrl}) => {
+const WinTwo = () => {
     return (
         <>
             {/* <WinNav/> */}
-            {/* <WinHeader/> */}
-            <WinHeader userBalance={userBalance} baseUrl={baseUrl}/>
+            <WinHeader2/>
             <TableWin/>
             <Footer/>
         </>
     )
 }
 
-export default Win
+export default WinTwo

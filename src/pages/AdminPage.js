@@ -2,26 +2,30 @@ import React from 'react'
 import { Navbar, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components'
 import { AiOutlineDoubleRight, AiFillHome, AiOutlineTrophy, AiOutlineSetting } from 'react-icons/ai';
-import { BiUserCircle, BiDockTop } from 'react-icons/bi';
+import { BiUserCircle, BiLogOutCircle } from 'react-icons/bi';
 import { FaGamepad } from 'react-icons/fa';
 import { RiPagesLine } from 'react-icons/ri';
 import { BsStar, BsWallet2 } from 'react-icons/bs';
 import { MdPayments } from 'react-icons/md';
 import { GoRequestChanges } from 'react-icons/go';
-import { Link } from 'react-router-dom'
-// import SideBarAddmin from '../components/SideBarAddmin'
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPage = () => {
+
+    const navigate = useNavigate()
 
     const [click, setClick] = React.useState(false);
     const handleClick = () => setClick(!click);
 
+    const logOutAdmin = () => {
+        localStorage.removeItem('adtoken')
+        navigate('/')
+    }
+
     return (
         <>
             <div>
-
-                {/* Navbar */}
-
                 <div>
                     <NavbarDiv bg="light" expand="lg" >
                         
@@ -47,7 +51,7 @@ const AdminPage = () => {
                                 onClick={() => setClick(true)}
                                 exact
                                 activeClassName="active"
-                                to="/win"
+                                to="/Order"
                             >
                                 <AiFillHome />
 
@@ -57,7 +61,7 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/team"
+                                to="/GameRules"
                             >
                                 <FaGamepad />
                                 <Text clicked={click}>Game Rules</Text>
@@ -81,7 +85,7 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/user/pages"
+                                to="/Promotions"
                             >
                                 <BsStar />
                                 <Text clicked={click}>Promotions</Text>
@@ -89,15 +93,15 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/GameResult"
                             >
-                                <BiDockTop />
-                                <Text clicked={click}>Game T/C</Text>
+                                <BsStar />
+                                <Text clicked={click}>Game Result</Text>
                             </Item>
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/admin/Period"
                             >
                                 <AiOutlineTrophy />
                                 <Text clicked={click}>Period</Text>
@@ -105,7 +109,7 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/payments"
                             >
                                 <MdPayments />
                                 <Text clicked={click}>Payment</Text>
@@ -113,15 +117,15 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/admin/ticket"
                             >
                                 <GoRequestChanges />
-                                <Text clicked={click}>Request Admin</Text>
+                                <Text clicked={click}>Tickets</Text>
                             </Item>
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/user/wallet"
                             >
                                 <BsWallet2 />
                                 <Text clicked={click}>Wallet</Text>
@@ -129,17 +133,30 @@ const AdminPage = () => {
                             <Item
                                 onClick={() => setClick(true)}
                                 activeClassName="active"
-                                to="/projects"
+                                to="/admin/gamesettings"
                             >
                                 <AiOutlineSetting />
                                 <Text clicked={click}>Game Setting</Text>
                             </Item>
+                            <Item
+                                onClick={() => setClick(true)}
+                                activeClassName="active"
+                                to="/admin/Setting"
+                            >
+                                <AiOutlineSetting />
+                                <Text clicked={click}>Setting</Text>
+                            </Item>
+                            <Item
+                                onClick={() => logOutAdmin()}
+                                activeClassName="active"
+                                to="/admin/login"
+                            >
+                                <BiLogOutCircle />
+                                <Text clicked={click}>Logout</Text>
+                            </Item>
                         </SlickBar>
                     </SidebarContainer>
                 </Containers>
-                {/* <Component>
-                    
-                </Component> */}
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div style={{ marginTop: '15rem', padding: '3rem' }}>
                         <h4>Welcome Dashboard </h4>
